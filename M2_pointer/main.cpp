@@ -20,4 +20,24 @@ int main()
         cout << "NIlai: ";
         cin >> (mhs + i)->NiLai;
     }
+
+    for (int i = 0; i < jumlahMahasiswa; i++)
+    {
+        cout << "=====================================" << endl;
+        cout << "NIM\t: " << (mhs + 1)->NIM << endl;
+        cout << "Nama\t: " << (mhs + 1)->Nama << endl;
+        cout << "NIlai\t: " << (mhs + 1)->NiLai << endl;
+        totalNilai += (mhs + 1)->NiLai;
+
+        if ((mhs + 1)->NiLai > tertinggi)
+        {
+            tertinggi = (mhs + 1)->NiLai;
+            namaTertinggi = (mhs + 1)->Nama;
+            nimTertinggi = (mhs + 1)->NIM;
+        }
+    }
+
+    cout << "=====================================" << endl;
+
+    cout;
 }

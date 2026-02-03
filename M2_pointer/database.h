@@ -1,7 +1,8 @@
 #include <iostream>
 using namespace std;
 
-int jumlahMahasiswa;
+int jumlahMahasiswa, totalNilai, rataRata, tertinggi = 0;
+string namaTertinggi, nimTertinggi;
 
 struct dataMahasiswa
 {
