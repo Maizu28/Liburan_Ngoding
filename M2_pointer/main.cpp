@@ -17,27 +17,44 @@ int main()
         getline(cin, (mhs + i)->NIM);
         cout << "Nama: ";
         getline(cin, (mhs + i)->Nama);
-        cout << "NIlai: ";
-        cin >> (mhs + i)->NiLai;
+        do
+        {
+            cout << "NIlai: ";
+            cin >> (mhs + i)->NiLai;
+            if ((mhs + i)->NiLai > 100)
+            {
+                cout << "NIlai mahasiswa tidak boleh melebihi 100!" << endl;
+            }
+        } while ((mhs + i)->NiLai > 100);
     }
 
     for (int i = 0; i < jumlahMahasiswa; i++)
     {
         cout << "=====================================" << endl;
-        cout << "NIM\t: " << (mhs + 1)->NIM << endl;
-        cout << "Nama\t: " << (mhs + 1)->Nama << endl;
-        cout << "NIlai\t: " << (mhs + 1)->NiLai << endl;
-        totalNilai += (mhs + 1)->NiLai;
+        cout << "NIM\t: " << (mhs + i)->NIM << endl;
+        cout << "Nama\t: " << (mhs + i)->Nama << endl;
+        cout << "NIlai\t: " << (mhs + i)->NiLai << endl;
+        totalNilai += (mhs + i)->NiLai;
 
-        if ((mhs + 1)->NiLai > tertinggi)
+        if ((mhs + i)->NiLai > tertinggi)
         {
-            tertinggi = (mhs + 1)->NiLai;
-            namaTertinggi = (mhs + 1)->Nama;
-            nimTertinggi = (mhs + 1)->NIM;
+            tertinggi = (mhs + i)->NiLai;
+            namaTertinggi = (mhs + i)->Nama;
+            nimTertinggi = (mhs + i)->NIM;
         }
     }
+    cout << "=====================================\n"
+         << endl;
+
+    rataRata = totalNilai / jumlahMahasiswa;
 
     cout << "=====================================" << endl;
+    cout << "NIlai rata-rata: " << rataRata << endl;
+    cout << "=====================================" << endl;
 
-    cout;
+    cout << "Mahasiswa denga nilai tertinggi: " << endl;
+    cout << "Nama\t: " << namaTertinggi << endl;
+    cout << "NIlai\t: " << tertinggi << endl;
+
+    delete[] mhs;
 }
