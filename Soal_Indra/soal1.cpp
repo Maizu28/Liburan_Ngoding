@@ -10,7 +10,9 @@ struct dataMahasiswa
 
 int main()
 {
-    dataMahasiswa *mhs = new dataMahasiswa;
+    dataMahasiswa temp;
+    dataMahasiswa *mhs = &temp;
+
     cout << "=== Isi data mahasiswa berikut ===" << endl;
     cout << "Nama: ";
     getline(cin, mhs->nama);
@@ -32,6 +34,4 @@ int main()
     cout << "Nama: " << mhs->nama << endl;
     cout << "Umur: " << mhs->umur << endl;
     cout << "IPK: " << mhs->ipk << endl;
-
-    delete mhs;
 }
